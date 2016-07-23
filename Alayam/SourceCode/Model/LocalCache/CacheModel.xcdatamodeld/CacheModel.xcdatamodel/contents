@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MenuEntity" representedClassName="MenuEntity" syncable="YES">
+        <attribute name="arabicName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentSectionID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="contentTypeID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="englishName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menuType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mobileIcon" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="NewsEntity" representedClassName="NewsEntity" syncable="YES">
+        <attribute name="contentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL_S" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsMainID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="newsSubTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsSummary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nEWSTIME" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nEWSURL" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PhotographyEntity" syncable="YES"/>
+    <entity name="ReadersEntity" representedClassName="ReadersEntity" syncable="YES">
+        <attribute name="contentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL_S" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsMainID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="newsSubTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsSummary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nEWSTIME" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nEWSURL" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ReadNews" representedClassName="ReadNews" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TagsEntity" syncable="YES"/>
+    <elements>
+        <element name="MenuEntity" positionX="-27" positionY="-9" width="128" height="135"/>
+        <element name="NewsEntity" positionX="-207" positionY="-144" width="128" height="223"/>
+        <element name="PhotographyEntity" positionX="160" positionY="-27" width="128" height="45"/>
+        <element name="ReadersEntity" positionX="-36" positionY="-54" width="128" height="223"/>
+        <element name="ReadNews" positionX="-27" positionY="-9" width="128" height="60"/>
+        <element name="TagsEntity" positionX="133" positionY="-144" width="128" height="45"/>
+    </elements>
+</model>
