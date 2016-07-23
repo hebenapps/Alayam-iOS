@@ -185,17 +185,6 @@
                                                                 <constraint firstAttribute="width" constant="34" id="PZ0-VE-nDq"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-FE-dnT">
-                                                            <rect key="frame" x="8" y="5" width="175" height="37"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="37" id="ONY-Fa-3ss"/>
-                                                                <constraint firstAttribute="width" constant="175" id="ut9-oy-qDj"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="12"/>
-                                                            <state key="normal" title="الرد على التعليق">
-                                                                <color key="titleColor" red="0.0" green="0.094117647060000004" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                        </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozq-xN-HMI">
                                                             <rect key="frame" x="399" y="0.0" width="1" height="89"/>
                                                             <color key="backgroundColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,6 +193,16 @@
                                                                 <constraint firstAttribute="height" constant="89" id="gvq-ei-TAS"/>
                                                             </constraints>
                                                         </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-FE-dnT">
+                                                            <rect key="frame" x="8" y="5" width="381" height="37"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="37" id="ONY-Fa-3ss"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="DroidArabicKufi" family="Droid Arabic Kufi" pointSize="12"/>
+                                                            <state key="normal" title="الرد على التعليق">
+                                                                <color key="titleColor" red="0.0" green="0.094117647060000004" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQF-BE-So1">
                                                             <rect key="frame" x="411" y="5" width="90" height="41"/>
                                                             <constraints>
@@ -221,6 +220,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="ozq-xN-HMI" firstAttribute="leading" secondItem="Az8-FE-dnT" secondAttribute="trailing" constant="10" id="43p-Jg-iXb"/>
                                                         <constraint firstItem="ghL-L8-HWs" firstAttribute="top" secondItem="CO9-jk-Wd6" secondAttribute="bottom" constant="12" id="570-EJ-iS2"/>
                                                         <constraint firstItem="SDw-yn-5Nk" firstAttribute="leading" secondItem="jQF-BE-So1" secondAttribute="trailing" constant="8" id="A84-zy-lhK"/>
                                                         <constraint firstItem="ghL-L8-HWs" firstAttribute="leading" secondItem="7Hy-71-U88" secondAttribute="trailing" constant="7" id="BYJ-TJ-jdd"/>
