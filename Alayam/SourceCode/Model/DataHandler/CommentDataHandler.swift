@@ -48,7 +48,7 @@ class CommentDataHandler: NSObject {
     
     func submitFeedbackForComment(isLoaderNeed : Bool, queryParameter: SubmitCommentFeedbackRequestDTO?, parameter : [String : AnyObject]?, Completion Handler : (SubmitCommentFeedbackResponseDTO!) -> Void, failureHandler: (NSError?) -> Void)
     {
-        WebServiceHandler().postMethod(APIConstants.urlConstant.sendFeedBackLike.rawValue, header: ["authorization" : ""], body: swiftToJsonParser(queryParameter!) as? [String : AnyObject]){
+        WebServiceHandler(show: isLoaderNeed).postMethod(APIConstants.urlConstant.sendFeedBackLike.rawValue, header: ["authorization" : ""], body: swiftToJsonParser(queryParameter!) as? [String : AnyObject]){
             (responseDict, error) -> Void in
             if let _ = responseDict
             {

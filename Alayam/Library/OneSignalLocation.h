@@ -1,7 +1,7 @@
 /**
  * Modified MIT License
  *
- * Copyright 2015 OneSignal
+ * Copyright 2016 OneSignal
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,13 +24,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#import <UIKit/UIKit.h>
-@interface OneSignalHTTPClient : NSObject
 
-@property (readonly, nonatomic) NSURL *baseURL;
+#ifndef OneSignalLocation_h
+#define OneSignalLocation_h
 
-- (id)initWithBaseURL:(NSURL *)url;
-
-- (NSMutableURLRequest*) requestWithMethod:(NSString*)method
-                                      path:(NSString*)path;
+@interface OneSignalLocation : NSObject
++ (void) getLocation:(id)delegate prompt:(bool)prompt;
 @end
+
+#endif /* OneSignalLocation_h */

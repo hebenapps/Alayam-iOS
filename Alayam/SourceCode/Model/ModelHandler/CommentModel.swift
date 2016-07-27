@@ -60,8 +60,11 @@ class CommentModel: NSObject {
     
     func submitFeedBackForComment(request: SubmitCommentFeedbackRequestDTO) {
         
-        CommentDataHandler().submitFeedbackForComment(true, queryParameter: request, parameter: nil, Completion: { (response) in
+        CommentDataHandler().submitFeedbackForComment(false, queryParameter: request, parameter: nil, Completion: { (response) in
             
+            if response.Status == "false" {
+                return
+            }
             self.delegate?.submitFeedbackCommentSuccess()
             
             }) { (error) in

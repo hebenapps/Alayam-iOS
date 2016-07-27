@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A043DA01D421609001259A8 /* OneSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D911D421609001259A8 /* OneSignal.m */; };
+		3A043DA11D421609001259A8 /* OneSignalHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D931D421609001259A8 /* OneSignalHTTPClient.m */; };
+		3A043DA21D421609001259A8 /* OneSignalLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D951D421609001259A8 /* OneSignalLocation.m */; };
+		3A043DA31D421609001259A8 /* OneSignalTrackIAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D971D421609001259A8 /* OneSignalTrackIAP.m */; };
+		3A043DA41D421609001259A8 /* OneSignalMobileProvision.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D991D421609001259A8 /* OneSignalMobileProvision.m */; };
+		3A043DA51D421609001259A8 /* GameThrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D9B1D421609001259A8 /* GameThrive.m */; };
+		3A043DA61D421609001259A8 /* OneSignalJailbreakDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D9D1D421609001259A8 /* OneSignalJailbreakDetection.m */; };
+		3A043DA71D421609001259A8 /* OneSignalReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A043D9F1D421609001259A8 /* OneSignalReachability.m */; };
 		3A4467411C21723200FAC351 /* tmp-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4467161C21723200FAC351 /* tmp-0.png */; };
 		3A4467421C21723200FAC351 /* tmp-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4467171C21723200FAC351 /* tmp-1.png */; };
 		3A4467431C21723200FAC351 /* tmp-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4467181C21723200FAC351 /* tmp-2.png */; };
@@ -52,13 +60,6 @@
 		3A44676B1C21723200FAC351 /* tmp-42.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4467401C21723200FAC351 /* tmp-42.png */; };
 		3A4BEA011CC1F1D800DA37B7 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4BEA001CC1F1D800DA37B7 /* PageViewController.swift */; };
 		3A77061B1C04424F00ABBE6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A77061A1C04424F00ABBE6B /* GoogleService-Info.plist */; };
-		3A7F74BD1C16E4E000015500 /* OneSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F74B81C16E4E000015500 /* OneSignal.m */; };
-		3A7F74BE1C16E4E000015500 /* OneSignalHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F74BA1C16E4E000015500 /* OneSignalHTTPClient.m */; };
-		3A7F74BF1C16E4E000015500 /* OneSignalTrackIAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F74BC1C16E4E000015500 /* OneSignalTrackIAP.m */; };
-		3A7F74C21C16E4ED00015500 /* OneSignalJailbreakDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F74C11C16E4ED00015500 /* OneSignalJailbreakDetection.m */; };
-		3A7F74C51C16E4F600015500 /* OneSignalMobileProvision.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F74C41C16E4F600015500 /* OneSignalMobileProvision.m */; };
-		3A7F74C81C16E4FF00015500 /* OneSignalReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F74C71C16E4FF00015500 /* OneSignalReachability.m */; };
-		3A7F74CB1C16E50900015500 /* GameThrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F74CA1C16E50900015500 /* GameThrive.m */; };
 		3ABA9A8F1CA28A71001727A6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA9A8E1CA28A71001727A6 /* CollectionViewCell.swift */; };
 		3AE88D7F1C0481E400381524 /* TagDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE88D7E1C0481E400381524 /* TagDetailViewController.swift */; };
 		45D301E91D01DD7F00CD972F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAF72D1D01D99E00A80651 /* Alamofire.framework */; };
@@ -218,6 +219,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A043D901D421609001259A8 /* OneSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignal.h; sourceTree = "<group>"; };
+		3A043D911D421609001259A8 /* OneSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignal.m; sourceTree = "<group>"; };
+		3A043D921D421609001259A8 /* OneSignalHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalHTTPClient.h; sourceTree = "<group>"; };
+		3A043D931D421609001259A8 /* OneSignalHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalHTTPClient.m; sourceTree = "<group>"; };
+		3A043D941D421609001259A8 /* OneSignalLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalLocation.h; sourceTree = "<group>"; };
+		3A043D951D421609001259A8 /* OneSignalLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalLocation.m; sourceTree = "<group>"; };
+		3A043D961D421609001259A8 /* OneSignalTrackIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalTrackIAP.h; sourceTree = "<group>"; };
+		3A043D971D421609001259A8 /* OneSignalTrackIAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalTrackIAP.m; sourceTree = "<group>"; };
+		3A043D981D421609001259A8 /* OneSignalMobileProvision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalMobileProvision.h; sourceTree = "<group>"; };
+		3A043D991D421609001259A8 /* OneSignalMobileProvision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalMobileProvision.m; sourceTree = "<group>"; };
+		3A043D9A1D421609001259A8 /* GameThrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameThrive.h; sourceTree = "<group>"; };
+		3A043D9B1D421609001259A8 /* GameThrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameThrive.m; sourceTree = "<group>"; };
+		3A043D9C1D421609001259A8 /* OneSignalJailbreakDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalJailbreakDetection.h; sourceTree = "<group>"; };
+		3A043D9D1D421609001259A8 /* OneSignalJailbreakDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalJailbreakDetection.m; sourceTree = "<group>"; };
+		3A043D9E1D421609001259A8 /* OneSignalReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalReachability.h; sourceTree = "<group>"; };
+		3A043D9F1D421609001259A8 /* OneSignalReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalReachability.m; sourceTree = "<group>"; };
 		3A4467161C21723200FAC351 /* tmp-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp-0.png"; sourceTree = "<group>"; };
 		3A4467171C21723200FAC351 /* tmp-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp-1.png"; sourceTree = "<group>"; };
 		3A4467181C21723200FAC351 /* tmp-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp-2.png"; sourceTree = "<group>"; };
@@ -263,20 +280,6 @@
 		3A4467401C21723200FAC351 /* tmp-42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tmp-42.png"; sourceTree = "<group>"; };
 		3A4BEA001CC1F1D800DA37B7 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		3A77061A1C04424F00ABBE6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3A7F74B71C16E4E000015500 /* OneSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignal.h; sourceTree = "<group>"; };
-		3A7F74B81C16E4E000015500 /* OneSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignal.m; sourceTree = "<group>"; };
-		3A7F74B91C16E4E000015500 /* OneSignalHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalHTTPClient.h; sourceTree = "<group>"; };
-		3A7F74BA1C16E4E000015500 /* OneSignalHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalHTTPClient.m; sourceTree = "<group>"; };
-		3A7F74BB1C16E4E000015500 /* OneSignalTrackIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalTrackIAP.h; sourceTree = "<group>"; };
-		3A7F74BC1C16E4E000015500 /* OneSignalTrackIAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalTrackIAP.m; sourceTree = "<group>"; };
-		3A7F74C01C16E4ED00015500 /* OneSignalJailbreakDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalJailbreakDetection.h; sourceTree = "<group>"; };
-		3A7F74C11C16E4ED00015500 /* OneSignalJailbreakDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalJailbreakDetection.m; sourceTree = "<group>"; };
-		3A7F74C31C16E4F600015500 /* OneSignalMobileProvision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalMobileProvision.h; sourceTree = "<group>"; };
-		3A7F74C41C16E4F600015500 /* OneSignalMobileProvision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalMobileProvision.m; sourceTree = "<group>"; };
-		3A7F74C61C16E4FF00015500 /* OneSignalReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneSignalReachability.h; sourceTree = "<group>"; };
-		3A7F74C71C16E4FF00015500 /* OneSignalReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneSignalReachability.m; sourceTree = "<group>"; };
-		3A7F74C91C16E50900015500 /* GameThrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameThrive.h; sourceTree = "<group>"; };
-		3A7F74CA1C16E50900015500 /* GameThrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameThrive.m; sourceTree = "<group>"; };
 		3ABA9A8E1CA28A71001727A6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = ../CollectionViewCell.swift; sourceTree = "<group>"; };
 		3AE88D7E1C0481E400381524 /* TagDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagDetailViewController.swift; sourceTree = "<group>"; };
 		685833D371F5FA00A2F96C95 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -446,20 +449,22 @@
 		3A7F74B61C16E4D000015500 /* OneSignal */ = {
 			isa = PBXGroup;
 			children = (
-				3A7F74B71C16E4E000015500 /* OneSignal.h */,
-				3A7F74B81C16E4E000015500 /* OneSignal.m */,
-				3A7F74C91C16E50900015500 /* GameThrive.h */,
-				3A7F74CA1C16E50900015500 /* GameThrive.m */,
-				3A7F74B91C16E4E000015500 /* OneSignalHTTPClient.h */,
-				3A7F74BA1C16E4E000015500 /* OneSignalHTTPClient.m */,
-				3A7F74BB1C16E4E000015500 /* OneSignalTrackIAP.h */,
-				3A7F74BC1C16E4E000015500 /* OneSignalTrackIAP.m */,
-				3A7F74C01C16E4ED00015500 /* OneSignalJailbreakDetection.h */,
-				3A7F74C11C16E4ED00015500 /* OneSignalJailbreakDetection.m */,
-				3A7F74C31C16E4F600015500 /* OneSignalMobileProvision.h */,
-				3A7F74C41C16E4F600015500 /* OneSignalMobileProvision.m */,
-				3A7F74C61C16E4FF00015500 /* OneSignalReachability.h */,
-				3A7F74C71C16E4FF00015500 /* OneSignalReachability.m */,
+				3A043D901D421609001259A8 /* OneSignal.h */,
+				3A043D911D421609001259A8 /* OneSignal.m */,
+				3A043D921D421609001259A8 /* OneSignalHTTPClient.h */,
+				3A043D931D421609001259A8 /* OneSignalHTTPClient.m */,
+				3A043D941D421609001259A8 /* OneSignalLocation.h */,
+				3A043D951D421609001259A8 /* OneSignalLocation.m */,
+				3A043D961D421609001259A8 /* OneSignalTrackIAP.h */,
+				3A043D971D421609001259A8 /* OneSignalTrackIAP.m */,
+				3A043D981D421609001259A8 /* OneSignalMobileProvision.h */,
+				3A043D991D421609001259A8 /* OneSignalMobileProvision.m */,
+				3A043D9A1D421609001259A8 /* GameThrive.h */,
+				3A043D9B1D421609001259A8 /* GameThrive.m */,
+				3A043D9C1D421609001259A8 /* OneSignalJailbreakDetection.h */,
+				3A043D9D1D421609001259A8 /* OneSignalJailbreakDetection.m */,
+				3A043D9E1D421609001259A8 /* OneSignalReachability.h */,
+				3A043D9F1D421609001259A8 /* OneSignalReachability.m */,
 			);
 			name = OneSignal;
 			sourceTree = "<group>";
@@ -1035,6 +1040,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -1220,14 +1228,12 @@
 				C8449F681B6A8E080081A10D /* QRReaderViewController.swift in Sources */,
 				3A4BEA011CC1F1D800DA37B7 /* PageViewController.swift in Sources */,
 				C80C4D731BCA9EDD00032A51 /* PDFDetailViewController.swift in Sources */,
-				3A7F74C81C16E4FF00015500 /* OneSignalReachability.m in Sources */,
 				C8449F801B6A8FE90081A10D /* SendNewsViewController.swift in Sources */,
 				C839159F1B5EC24300BE99D8 /* WeatherViewController.swift in Sources */,
 				3ABA9A8F1CA28A71001727A6 /* CollectionViewCell.swift in Sources */,
 				C80C4D711BCA912400032A51 /* PDFListTableViewCell.swift in Sources */,
 				BA8002AB1B771FF900E5B820 /* AMCustomLoader.swift in Sources */,
 				C8093F031B6404D6008BCDC3 /* HomeDetailViewController.swift in Sources */,
-				3A7F74CB1C16E50900015500 /* GameThrive.m in Sources */,
 				C8449F6A1B6A8E210081A10D /* PDFReaderViewController.swift in Sources */,
 				C8B3AC3D1B5C2F170015420B /* MMDrawerController.m in Sources */,
 				3AE88D7F1C0481E400381524 /* TagDetailViewController.swift in Sources */,
@@ -1236,9 +1242,11 @@
 				84088CFD1D20604A00ECF3F3 /* CommentDTO.swift in Sources */,
 				845A02CC1D28D82B007588EC /* CommentListTableViewCell.swift in Sources */,
 				BACAAF131B63ED33009C3A08 /* Router.swift in Sources */,
+				3A043DA11D421609001259A8 /* OneSignalHTTPClient.m in Sources */,
 				BA8A8BCF1B9E00ED003BDB29 /* TagsViewControllerModel.swift in Sources */,
 				C8BAD7221B6350F0004F9CD2 /* ObjectFactory.swift in Sources */,
 				BA8002A21B76911600E5B820 /* PhotographyModel.swift in Sources */,
+				3A043DA61D421609001259A8 /* OneSignalJailbreakDetection.m in Sources */,
 				BA8002A51B76963F00E5B820 /* PhotosDataHandler.swift in Sources */,
 				C8BAD7201B6350E5004F9CD2 /* OBJCObjectFactory.m in Sources */,
 				BAC01F0C1BE6726F0002FAD4 /* CustomPullToRefreshControl.m in Sources */,
@@ -1249,12 +1257,12 @@
 				C80AB1D51B9BC12D004E76E1 /* BreakingNewsData.swift in Sources */,
 				C8689B761BB830EB00B119C6 /* HMLocation.swift in Sources */,
 				84088CF91D1FFE7900ECF3F3 /* LoginViewController.swift in Sources */,
+				3A043DA31D421609001259A8 /* OneSignalTrackIAP.m in Sources */,
 				BA7122151B64182500379507 /* HomeRegularNewsTableViewCell.swift in Sources */,
-				3A7F74BD1C16E4E000015500 /* OneSignal.m in Sources */,
 				C8449F7A1B6A8F820081A10D /* NewsPaperViewController.swift in Sources */,
-				3A7F74BE1C16E4E000015500 /* OneSignalHTTPClient.m in Sources */,
 				BA8002A71B7696C800E5B820 /* PhotosData.swift in Sources */,
 				BA8A8BCD1B9E009A003BDB29 /* DBSphereView.m in Sources */,
+				3A043DA01D421609001259A8 /* OneSignal.m in Sources */,
 				84088CF41D1FF94600ECF3F3 /* AddCommentViewController.swift in Sources */,
 				C80AB1D71B9BC35D004E76E1 /* BreakingNewsDataHandler.swift in Sources */,
 				BA1354CB1BA2049B000D6571 /* ReadersListModel.swift in Sources */,
@@ -1262,14 +1270,15 @@
 				C83915A21B5EC24300BE99D8 /* MenuViewController.swift in Sources */,
 				845A02C41D282E03007588EC /* UserAccountModel.swift in Sources */,
 				C83915A01B5EC24300BE99D8 /* HomeViewController.swift in Sources */,
+				3A043DA71D421609001259A8 /* OneSignalReachability.m in Sources */,
 				C85EC2FE1B68003200F8E27D /* CommentsViewController.swift in Sources */,
 				84088CE71D1FEA8100ECF3F3 /* CommentDataHandler.swift in Sources */,
 				C8449F6C1B6A8E890081A10D /* TagsViewController.swift in Sources */,
+				3A043DA41D421609001259A8 /* OneSignalMobileProvision.m in Sources */,
 				84088CFB1D20603900ECF3F3 /* RegisterDTO.swift in Sources */,
 				C80AB1CE1B9BBC63004E76E1 /* BreakingNewsTableViewCell.swift in Sources */,
 				C8449F6E1B6A8EA10081A10D /* ReaderListViewController.swift in Sources */,
 				C8449F821B6A8FFB0081A10D /* ShareNewsViewController.swift in Sources */,
-				3A7F74C51C16E4F600015500 /* OneSignalMobileProvision.m in Sources */,
 				C83915A11B5EC24300BE99D8 /* MenuItemViewCell.swift in Sources */,
 				C8449F701B6A8ED00081A10D /* BreakingNewsViewController.swift in Sources */,
 				BA7122061B63F15300379507 /* HomeFeedDataHandler.swift in Sources */,
@@ -1287,17 +1296,17 @@
 				BAAF12DF1BDD743A00C4D004 /* MenuDataModel.swift in Sources */,
 				C80C4D771BCAAB3F00032A51 /* PDFModel.swift in Sources */,
 				C839158C1B5EBE3900BE99D8 /* Reachability.swift in Sources */,
+				3A043DA51D421609001259A8 /* GameThrive.m in Sources */,
 				BADBC6951B66ABE6008B83D6 /* HomeHeaderTableViewCell.swift in Sources */,
 				C8449F661B6A607C0081A10D /* SettingViewController.swift in Sources */,
 				BA1354C61BA1FDA8000D6571 /* ReadersEntity.swift in Sources */,
-				3A7F74C21C16E4ED00015500 /* OneSignalJailbreakDetection.m in Sources */,
 				C8449F721B6A8EF90081A10D /* LocalNewsViewController.swift in Sources */,
 				C80C4D791BCAABDE00032A51 /* PDFDataHandler.swift in Sources */,
 				845A02CA1D282E4A007588EC /* UserAccountDataHandler.swift in Sources */,
 				C8449F781B6A8F640081A10D /* InternationalNewsViewController.swift in Sources */,
-				3A7F74BF1C16E4E000015500 /* OneSignalTrackIAP.m in Sources */,
 				C8A295361C0129D30083EBF8 /* DWTagList.m in Sources */,
 				BA71220C1B63FFED00379507 /* HomeNewsModel.swift in Sources */,
+				3A043DA21D421609001259A8 /* OneSignalLocation.m in Sources */,
 				BAF31BD21BF8C65C0022B856 /* ArticleListCell.swift in Sources */,
 				BA7122091B63FF9C00379507 /* HomeSliderNewsData.swift in Sources */,
 				84088CF71D1FFE6600ECF3F3 /* RegisterViewController.swift in Sources */,
@@ -1398,8 +1407,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Alayam Publication Establishment (YWFU4G3622)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alayam Publication Establishment (YWFU4G3622)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1413,7 +1422,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Alayam;
-				PROVISIONING_PROFILE = "dd4e6faa-ae27-4c62-b68d-5e9234d07aff";
+				PROVISIONING_PROFILE = "0ab02113-c8b6-4534-be17-84889a04b814";
 				SWIFT_OBJC_BRIDGING_HEADER = "Alayam/Library/MMDrawerController/Alayam-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1427,8 +1436,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Alayam Publication Establishment (YWFU4G3622)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alayam Publication Establishment (YWFU4G3622)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1442,7 +1451,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Alayam;
-				PROVISIONING_PROFILE = "dd4e6faa-ae27-4c62-b68d-5e9234d07aff";
+				PROVISIONING_PROFILE = "0ab02113-c8b6-4534-be17-84889a04b814";
 				SWIFT_OBJC_BRIDGING_HEADER = "Alayam/Library/MMDrawerController/Alayam-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

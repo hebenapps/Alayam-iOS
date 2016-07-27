@@ -11,6 +11,18 @@
  
  class WebServiceHandler: NSObject {
     
+    var showLoader = true
+    
+    override init() {
+        super.init()
+    }
+    
+    init(show: Bool) {
+        super.init()
+        
+        showLoader = show
+    }
+    
     
     var loaderView : UIView!
     
@@ -101,7 +113,12 @@
     {
         
         NSURLCache.sharedURLCache().removeAllCachedResponses()
-        addloader();
+        
+        if showLoader {
+        
+            addloader()
+            
+        }
         print("Request : \(body)")
         
         let nsurl = NSURL(string:url)

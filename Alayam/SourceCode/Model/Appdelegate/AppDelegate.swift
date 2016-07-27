@@ -72,13 +72,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.All
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
+        
         GIDSignIn.sharedInstance().clientID = "497825064621-q92oask59dgtguj42au5gog105g6t7ot.apps.googleusercontent.com"
         
         
-//        var configureError: NSError?
-//        GGLContext.sharedInstance().configureWithError(&configureError)
-//        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        //        var configureError: NSError?
+        //        GGLContext.sharedInstance().configureWithError(&configureError)
+        //        assert(configureError == nil, "Error configuring Google services: \(configureError)")
         
         GIDSignIn.sharedInstance().delegate = self
         
@@ -109,8 +109,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     print("MainNewsID : \(MainNewsID)", terminator: "")
                 }
                 
-                var rootViewController = self.window?.rootViewController
-                
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 
                 let NewsDetailsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeDetailViewControllerID") as! HomeDetailViewController
@@ -119,14 +117,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 
                 NewsDetailsViewController.isFromNotification = true
                 NewsDetailsViewController.MainNewsID = MainNewsID
-                self.centerContainer = MMDrawerController(centerViewController: newsDetails, rightDrawerViewController: menuSideNav)
-                // centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav, rightDrawerViewController: rightSideNav)
+//                self.centerContainer = MMDrawerController(centerViewController: newsDetails, rightDrawerViewController: menuSideNav)
+//                // centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav, rightDrawerViewController: rightSideNav)
+//                
+//                self.centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
+//                self.centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.All
                 
-                self.centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
-                self.centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.All
+                let current = self.getCurrentViewController()
                 
-                self.window!.rootViewController = self.centerContainer
-                self.window!.makeKeyAndVisible()
+                if isActive == false{
+                    
+//                    self.window!.rootViewController = self.centerContainer
+//                    self.window!.makeKeyAndVisible()
+                    
+                }else {
+                    let alertController = UIAlertController(title: "", message: message, preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "اقرأ", style: UIAlertActionStyle.Default) {
+                        UIAlertAction in
+                        
+                        self.centerContainer?.centerViewController.navigationController?.pushViewController(NewsDetailsViewController, animated: true)
+                        
+//                        self.window!.rootViewController = self.centerContainer
+//                        self.window!.makeKeyAndVisible()
+                        
+                    }
+                    let cancelAction = UIAlertAction(title: "في وقت لاحق", style: UIAlertActionStyle.Default) {
+                        UIAlertAction in
+                        NSLog("Cancel Pressed")
+                    }
+                    alertController.addAction(okAction)
+                    alertController.addAction(cancelAction)
+                    current!.presentViewController(alertController, animated: true, completion: nil)
+                }
+                
                 
                 // Check for and read any custom values you added to the notification
                 // This done with the "Additonal Data" section the dashbaord.
@@ -175,40 +198,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         {
             MainNewsID = info["NewsMainID"] as! NSString
             let alertMsg = info["alert"] as! String
-            var alert: UIAlertView!
-            alert = UIAlertView(title: "", message: alertMsg, delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
+            //            var alert: UIAlertView!
+            //            alert = UIAlertView(title: "", message: alertMsg, delegate: nil, cancelButtonTitle: "OK")
+            //            alert.show()
+            var rootViewController = self.window?.rootViewController
+            
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let homeViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+            
+            let hotNewsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("BreakingNewsViewController") as! BreakingNewsViewController
+            
+            let menuViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+            
+            let NewsDetailsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeDetailViewControllerID") as! HomeDetailViewController
+            
+            let menuSideNav = UINavigationController(rootViewController: menuViewController)
+            var homeNav = UINavigationController(rootViewController: homeViewController)
+            var HotNav = UINavigationController(rootViewController: hotNewsViewController)
+            let newsDetails = UINavigationController(rootViewController: NewsDetailsViewController)
+            
+            NewsDetailsViewController.isFromNotification = true
+            NewsDetailsViewController.MainNewsID = MainNewsID
+            
+            
+            let alertController = UIAlertController(title: "", message: alertMsg, preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "اقرأ", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                
+                self.centerContainer?.centerViewController.navigationController?.pushViewController(NewsDetailsViewController, animated: true)
+                
+            }
+            let cancelAction = UIAlertAction(title: "في وقت لاحق", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+            }
+            
+            alertController.addAction(okAction)
+            
+            alertController.addAction(cancelAction)
+            
+            getCurrentViewController()!.presentViewController(alertController, animated: true, completion: nil)
         }
-        var rootViewController = self.window?.rootViewController
-        
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let homeViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        
-        let hotNewsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("BreakingNewsViewController") as! BreakingNewsViewController
-        
-        let menuViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
-        
-        let NewsDetailsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeDetailViewControllerID") as! HomeDetailViewController
-        
-        let menuSideNav = UINavigationController(rootViewController: menuViewController)
-        var homeNav = UINavigationController(rootViewController: homeViewController)
-        var HotNav = UINavigationController(rootViewController: hotNewsViewController)
-        let newsDetails = UINavigationController(rootViewController: NewsDetailsViewController)
-        
-        NewsDetailsViewController.isFromNotification = true
-        NewsDetailsViewController.MainNewsID = MainNewsID
-        centerContainer = MMDrawerController(centerViewController: newsDetails, rightDrawerViewController: menuSideNav)
-        // centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav, rightDrawerViewController: rightSideNav)
-        
-        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
-        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.All
-        
-        window!.rootViewController = centerContainer
-        window!.makeKeyAndVisible()
-        
-        
-        
         
     }
     
@@ -251,7 +282,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("\(error.localizedDescription)")
         }
     }
-
+    
     
     func application(application: UIApplication,
                      openURL url: NSURL, options: [String: AnyObject]) -> Bool {
@@ -302,14 +333,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.hakuna.LIAD" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] 
-        }()
+        return urls[urls.count-1]
+    }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = NSBundle.mainBundle().URLForResource("CacheModel", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
-        }()
+    }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
@@ -338,7 +369,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         
         return coordinator
-        }()
+    }()
     
     lazy var managedObjectContext: NSManagedObjectContext? = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
@@ -349,7 +380,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         var managedObjectContext = NSManagedObjectContext()
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
-        }()
+    }()
     
     // MARK: - Core Data Saving support
     
@@ -377,6 +408,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         webV.hidden = true
         view.addSubview(webV)
     }
+    
+    // Returns the most recently presented UIViewController (visible)
+    func getCurrentViewController() -> UIViewController? {
+        
+        // Otherwise, we must get the root UIViewController and iterate through presented views
+        if let rootController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            
+            var currentController: UIViewController! = rootController
+            
+            // Each ViewController keeps track of the view it has presented, so we
+            // can move from the head to the tail, which will always be the current view
+            while( currentController.presentedViewController != nil ) {
+                
+                currentController = currentController.presentedViewController
+            }
+            return currentController
+        }
+        return self.window?.rootViewController
+    }
+    
     
 }
 

@@ -42,11 +42,22 @@ class AddCommentViewController: UIViewController {
     
     var commentType = "News"
     
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureWithLoginDetails()
+        
+        var paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 50))
+        paddingView.backgroundColor = UIColor.clearColor()
+        
+        txtFldCommentTitle.rightView = paddingView
+        txtFldCommentTitle.rightViewMode = UITextFieldViewMode.Always
+        
+//        txtFldCommentTitle.layer.sublayerTransform = CATransform3DMakeTranslation(0, 0, 5)
+        txtViewCommentDescription.layer.sublayerTransform = CATransform3DMakeTranslation(0, 0, 5)
 
         // Do any additional setup after loading the view.
     }
@@ -180,6 +191,18 @@ class AddCommentViewController: UIViewController {
             
         }
         
+        if txtViewCommentDescription.text.characters.count < 10 {
+            
+            
+            let msg = "إدخال الحد الأدنى 10 حرفا"
+            
+            UIAlertView(title: "", message: msg, delegate: nil, cancelButtonTitle: "Ok").show()
+            
+            return false
+
+            
+        }
+        
         return true
     }
     
@@ -257,4 +280,51 @@ extension AddCommentViewController: LoginViewControllerDelegate {
         
     }
     
+}
+
+extension AddCommentViewController: UITextFieldDelegate {
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let newString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        
+        if textField == txtFldCommentTitle {
+            
+            if newString.characters.count > 60 {
+                
+                return false
+                
+            }
+            
+        }
+        
+        
+        return true
+    }
+    
+}
+
+
+extension AddCommentViewController: UITextViewDelegate
+{
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        let newString = (textView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
+        
+        if textView == txtViewCommentDescription {
+            
+            if newString.characters.count > 500 {
+                
+                return false
+                
+            }
+            
+        }
+        
+        
+        return true
+        
+        
+    }
 }
