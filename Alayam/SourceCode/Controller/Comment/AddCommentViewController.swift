@@ -84,7 +84,15 @@ class AddCommentViewController: UIViewController {
             
             LocalCacheDataHandler().updateLoginUserName("")
             
+            GIDSignIn.sharedInstance().disconnect()
+            
             GIDSignIn.sharedInstance().signOut()
+            
+            let deletepermission = FBSDKGraphRequest(graphPath: "me/permissions/", parameters: nil, HTTPMethod: "DELETE")
+            deletepermission.startWithCompletionHandler({(connection,result,error)-> Void in
+                print("the delete permission is \(result)")
+                
+            })
             
             FBSDKLoginManager().logOut()
             

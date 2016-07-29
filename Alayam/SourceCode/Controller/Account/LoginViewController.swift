@@ -114,8 +114,22 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                             //                            if let  = (results.objectForKey("is_silhouette") as? String) {
                             //                                request.ProfilePicURL = "http://graph.facebook.com/\(request.ProviderID)/picture?width=300&height=300"
                             //                            }
-                            request.Email = results.objectForKey("email") as! String
+                            request.Email = results.objectForKey("email") as? String ?? ""
                             
+                            
+                            if request.Email == "" {
+                                
+                                let deletepermission = FBSDKGraphRequest(graphPath: "me/permissions/", parameters: nil, HTTPMethod: "DELETE")
+                                deletepermission.startWithCompletionHandler({(connection,result,error)-> Void in
+                                    print("the delete permission is \(result)")
+                                    
+                                })
+                                
+                                UIAlertView(title: "", message: "يرجى تقديم إذن للوصول إلى معرف البريد الإلكتروني الخاص بك", delegate: nil, cancelButtonTitle: "حسنا").show()
+                                
+                                return
+                                
+                            }
                             
                             request.AccessToken = token
                             request.DisplayName = request.UserName
