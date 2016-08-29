@@ -18,6 +18,8 @@ class CommentListViewController: UIViewController {
     
     var newsMainId = ""
     
+    var commentMailId: NSNumber = 0
+    
     var commentType = "News"
     
     var comments = NSMutableArray()
@@ -174,6 +176,8 @@ class CommentListViewController: UIViewController {
         
         commentsViewController.newsMainId = newsMainId
         
+        commentsViewController.commentMailId = commentDetail.COMMENTID
+        
         commentsViewController.isReplyCommentList = true
         
         self.navigationController?.pushViewController(commentsViewController, animated: true)
@@ -248,7 +252,29 @@ extension CommentListViewController: CommentModelDelegate {
     
     func getCommentListSuccess(commentList: NSMutableArray) {
         
-        self.comments = commentList
+        if isReplyCommentList {
+            
+            for item in commentList {
+                
+                if let item = item as? CommentsDTO {
+                    
+                    if item.COMMENTID == commentMailId {
+                        
+                        self.comments = item.ReplyComments
+                        
+                        break
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        else {
+            
+            self.comments = commentList
+            
+        }
         
         tblViewCommentList.reloadData()
         
@@ -260,57 +286,59 @@ extension CommentListViewController: CommentModelDelegate {
     
     func submitFeedbackCommentSuccess() {
         
-        if isReplyCommentList {
-            
-            if let value = self.comments.objectAtIndex(indexpathRow) as? ReplyCommentsDTO {
-                
-                let unlikePredicate = NSPredicate(format: "AbuseType = %d",  abuseType)
-                
-                let unlikeArray = value.Likes.filteredArrayUsingPredicate(unlikePredicate)
-                
-                
-                if unlikeArray.count > 0 {
-                    
-                    if let unlikecount = unlikeArray[0] as? LikesDTO {
-                        
-                        unlikecount.AbuseCount = Int(unlikecount.AbuseCount) + 1
-                        
-                    }
-                    
-                }
-                
-                self.comments[indexpathRow] = value
-                
-                tblViewCommentList.reloadData()
-                
-            }
-            
-        }
-        else {
-            if let value = self.comments.objectAtIndex(indexpathRow) as? CommentsDTO {
-                
-                let unlikePredicate = NSPredicate(format: "AbuseType = %d",  abuseType)
-                
-                let unlikeArray = value.Likes.filteredArrayUsingPredicate(unlikePredicate)
-                
-                
-                if unlikeArray.count > 0 {
-                    
-                    if let unlikecount = unlikeArray[0] as? LikesDTO {
-                        
-                        unlikecount.AbuseCount = Int(unlikecount.AbuseCount) + 1
-                        
-                    }
-                    
-                }
-                
-                self.comments[indexpathRow] = value
-                
-                tblViewCommentList.reloadData()
-                
-            }
-            
-        }
+        model.getCommentList(false, newsId: newsMainId, commentType: commentType)
+        
+//        if isReplyCommentList {
+//            
+//            if let value = self.comments.objectAtIndex(indexpathRow) as? ReplyCommentsDTO {
+//                
+//                let unlikePredicate = NSPredicate(format: "AbuseType = %d",  abuseType)
+//                
+//                let unlikeArray = value.Likes.filteredArrayUsingPredicate(unlikePredicate)
+//                
+//                
+//                if unlikeArray.count > 0 {
+//                    
+//                    if let unlikecount = unlikeArray[0] as? LikesDTO {
+//                        
+//                        unlikecount.AbuseCount = Int(unlikecount.AbuseCount) + 1
+//                        
+//                    }
+//                    
+//                }
+//                
+//                self.comments[indexpathRow] = value
+//                
+//                tblViewCommentList.reloadData()
+//                
+//            }
+//            
+//        }
+//        else {
+//            if let value = self.comments.objectAtIndex(indexpathRow) as? CommentsDTO {
+//                
+//                let unlikePredicate = NSPredicate(format: "AbuseType = %d",  abuseType)
+//                
+//                let unlikeArray = value.Likes.filteredArrayUsingPredicate(unlikePredicate)
+//                
+//                
+//                if unlikeArray.count > 0 {
+//                    
+//                    if let unlikecount = unlikeArray[0] as? LikesDTO {
+//                        
+//                        unlikecount.AbuseCount = Int(unlikecount.AbuseCount) + 1
+//                        
+//                    }
+//                    
+//                }
+//                
+//                self.comments[indexpathRow] = value
+//                
+//                tblViewCommentList.reloadData()
+//                
+//            }
+//            
+//        }
     }
     
 }
@@ -389,7 +417,7 @@ extension CommentListViewController: UITableViewDelegate, UITableViewDataSource 
 extension CommentListViewController: AddCommentViewControllerDelegate {
     
     func refreshCommentList() {
-        model.getCommentList(newsMainId, commentType: commentType)
+        model.getCommentList(true, newsId: newsMainId, commentType: commentType)
     }
     
     

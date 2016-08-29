@@ -24,9 +24,9 @@ class CommentModel: NSObject {
     
     var commentList = NSMutableArray()
     
-    func getCommentList(newsId: String, commentType: String) {
+    func getCommentList(showLoader: Bool, newsId: String, commentType: String) {
         
-        CommentDataHandler().getCommentListWithPagination(true, pageNumber: 1, numberOfNews: 100, queryParameter: nil, newsID: newsId, commentType: commentType, Completion: { (response) in
+        CommentDataHandler().getCommentListWithPagination(showLoader, pageNumber: 1, numberOfNews: 100, queryParameter: nil, newsID: newsId, commentType: commentType, Completion: { (response) in
             
             if response != nil {
                 
@@ -62,9 +62,9 @@ class CommentModel: NSObject {
         
         CommentDataHandler().submitFeedbackForComment(false, queryParameter: request, parameter: nil, Completion: { (response) in
             
-            if response.Status == "false" {
-                return
-            }
+//            if response.Status == "false" {
+//                return
+//            }
             self.delegate?.submitFeedbackCommentSuccess()
             
             }) { (error) in
