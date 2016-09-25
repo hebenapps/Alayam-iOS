@@ -12,6 +12,14 @@ import FBSDKCoreKit
 
 import FBSDKLoginKit
 
+@objc
+protocol CommentListViewControllerDelegate {
+    
+    optional func commentListCount(count: Int)
+    
+}
+
+
 class CommentListViewController: UIViewController {
     
     var model = CommentModel()
@@ -25,6 +33,8 @@ class CommentListViewController: UIViewController {
     var comments = NSMutableArray()
     
     var isReplyCommentList = false
+    
+    var delegate: CommentListViewControllerDelegate?
     
     private var indexpathRow = -1
     
@@ -70,6 +80,8 @@ class CommentListViewController: UIViewController {
     }
     
     @IBAction func btnBackAction(sender: AnyObject) {
+        
+        delegate?.commentListCount?(comments.count)
         
         self.navigationController?.popViewControllerAnimated(true)
         

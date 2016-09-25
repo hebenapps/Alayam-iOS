@@ -65,6 +65,7 @@ class SliderNewsDTO : NSObject
     var ContentType = ""
     var SectionName = ""
     var IssueID : NSNumber = 0.0
+    var CommentCount: NSNumber = 0.0
     var NewsTitle = ""
     var NewsSubTitle = ""
     var NewsSummary = ""

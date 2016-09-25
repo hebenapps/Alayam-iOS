@@ -19,6 +19,7 @@ class HomeDetailViewController: UIViewController, UIWebViewDelegate, UIScrollVie
     @IBOutlet weak var txtViewDetails: UITextView!
     
     @IBOutlet weak var lblSubTitle: UILabel!
+    @IBOutlet weak var lblCommentCount: UILabel!
     @IBOutlet weak var constraintWebViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var lblNewsDate: UILabel!
@@ -455,6 +456,7 @@ class HomeDetailViewController: UIViewController, UIWebViewDelegate, UIScrollVie
         print(newsDetails.NEWSURL)
         NewsURL = newsDetails.NEWSURL
         lblNewsTitle.text = newsDetails.NewsTitle
+        lblCommentCount.text = "\(newsDetails.CommentCount)"
         lblNewsTitle1.text = newsDetails.NewsPhotoCaption
         lblNewsDate.text = newsDetails.NewsDate
         lblSubTitle.text = newsDetails.NewsSubTitle
@@ -567,6 +569,7 @@ class HomeDetailViewController: UIViewController, UIWebViewDelegate, UIScrollVie
             if response != nil {
                 
                 let commentsViewController = self.getViewControllerInstance("Comment", storyboardId: "CommentListViewControllerID") as! CommentListViewController
+                commentsViewController.delegate = self
                 commentsViewController.comments = response.Data.Comments
                 
                 if self.sliderNewsDetails != nil {
@@ -710,4 +713,13 @@ class HomeDetailViewController: UIViewController, UIWebViewDelegate, UIScrollVie
         let builder =  GAIDictionaryBuilder.createEventWithCategory(category, action: action, label: label, value: value)
         tracker.send(builder.build() as [NSObject : AnyObject])
     }
+}
+
+
+extension HomeDetailViewController: CommentListViewControllerDelegate {
+    
+    func commentListCount(count: Int) {
+        lblCommentCount.text = "\(count)"
+    }
+    
 }

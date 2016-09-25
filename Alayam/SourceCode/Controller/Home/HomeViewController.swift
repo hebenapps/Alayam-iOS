@@ -132,7 +132,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITableViewDel
         	self.refreshControl.refreshStyle = CustomPullToRefreshNone;
 //        	self.refreshControl.refreshEasing = CustomPullToRefreshMomentum;
         
-        self.refreshControl.addTarget(self, action: Selector("pullToRefresh:"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.addTarget(self, action: #selector(HomeViewController.pullToRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl.addTarget(self, action: Selector("cancelRefresh:"), forControlEvents: UIControlEvents.TouchCancel)
 //        [self.refreshControl addTarget:self action:@selector(pulledToRefresh:)
 //        forControlEvents:UIControlEventValueChanged];

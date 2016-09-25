@@ -245,10 +245,17 @@ class LocalCacheDataHandler: NSObject {
         let context:NSManagedObjectContext = appDelegate.managedObjectContext!
         let results:NSArray = try! context.executeFetchRequest(request)
         
-        for (var j = 0; j < results.count; j++)
-        {
-           context.deleteObject(results.objectAtIndex(j) as! NSManagedObject)
+//        for (var j = 0; j < results.count; j++)
+//        {
+//           context.deleteObject(results.objectAtIndex(j) as! NSManagedObject)
+//        }
+        
+        for item in results {
+            
+            context.deleteObject(item as! NSManagedObject)
+            
         }
+        
         
         let managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.PrivateQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = (UIApplication.sharedApplication().delegate as! AppDelegate).persistentStoreCoordinator // or wherever your coordinator is

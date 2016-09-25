@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "ic_comment_icon.png",
+      "filename" : "commentIcon.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ic_comment_icon-1.png",
+      "filename" : "commentIcon-1.png",
       "scale" : "3x"
     }
   ],

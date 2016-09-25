@@ -404,7 +404,7 @@
                                                 <color key="textColor" red="0.088874315689999997" green="0.7063184307" blue="0.94405793800000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-0W-Elv">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-0W-Elv">
                                                 <rect key="frame" x="448" y="8" width="40" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="JwE-xS-Rxk"/>
@@ -460,7 +460,7 @@
                                                     <outlet property="delegate" destination="jBb-L3-BM9" id="KD6-w3-kfq"/>
                                                 </connections>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ep-65-ZzX">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ep-65-ZzX">
                                                 <rect key="frame" x="275" y="8" width="160" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="160" id="Tbv-6j-taJ"/>
